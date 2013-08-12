@@ -1,15 +1,11 @@
-import webapp2
+from bottle import get,redirect,template,response, default_app
 import os
 
-class MainPage(webapp2.RequestHandler):
-
-    def get(self):
-        self.response.headers['Content-Type'] = 'text/html'
-        self.response.write('Your IP: ')
-        self.response.write(os.environ['REMOTE_ADDR'] )
-        self.response.write( str(os.environ) )
+@get("/")
+def index(self):
+    response.set_header('Content-Type', 'text/html')
+    #os.environ['REMOTE_ADDR']
+    return request.headers
 
 
-application = webapp2.WSGIApplication([
-    ('/', MainPage),
-], debug=False)
+application = default_app()
