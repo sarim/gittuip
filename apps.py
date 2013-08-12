@@ -1,4 +1,4 @@
-from bottle import get,redirect,template,response, default_app, run
+from bottle import get,redirect,template,response, default_app, run, debug
 import os
 
 @get("/")
@@ -7,6 +7,6 @@ def index(self):
     #os.environ['REMOTE_ADDR']
     return request.headers
 
-
+debug(True)
 application = default_app()
 run(server="gae")
