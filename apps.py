@@ -1,4 +1,4 @@
-from bottle import get,redirect,template,response, default_app
+from bottle import get,redirect,template,response, default_app, run
 import os
 
 @get("/")
@@ -9,3 +9,4 @@ def index(self):
 
 
 application = default_app()
+run(server="gae")
