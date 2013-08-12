@@ -38,7 +38,7 @@
 </style>
 %for key,value in data.iteritems():
 <div>
-<span class="key">{{ key }}.</span>
+<span class="key">{{ key }}</span>
 <span class="value">{{ "_None_" if value=="" else value }}</span>
 </div>
 %end

@@ -13,7 +13,7 @@ def index():
 @get("/details")
 def details():
     ip = os.environ['REMOTE_ADDR']
-    ret = {"Your IP" : ip}
+    ret = {"REMOTE_ADDR" : ip}
     for key in request.headers:
         ret[key] = request.headers.get(key)
     
