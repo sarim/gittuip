@@ -5,7 +5,7 @@ import os
 def index():
     response.set_header('Content-Type', 'text/html')
     #os.environ['REMOTE_ADDR']
-    return request.headers
+    return str(os.environ)
 
 application = default_app()
 if __name__=="__main__":
