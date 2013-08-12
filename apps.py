@@ -13,12 +13,11 @@ def index():
 @get("/details")
 def details():
     ip = os.environ['REMOTE_ADDR']
-    ret = ["Your IP : %s" % ip]
+    ret = {"Your IP" : ip}
     for key in request.headers:
-        line = "%s : %s" % (key , request.headers.get(key))
-        ret.append(line)
+        ret[key] = request.headers.get(key)
     
-    return "<br>".join(ret)
+    return template("template", data=ret)
 
 
 application = default_app()
