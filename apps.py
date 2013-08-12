@@ -1,4 +1,4 @@
-from bottle import get,redirect,template,response, default_app, run, debug
+from bottle import get,redirect,template,request, response, default_app, run, debug
 import os
 
 @get("/")
